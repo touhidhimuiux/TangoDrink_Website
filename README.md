@@ -60,7 +60,7 @@ This project is licensed under the MIT License – free to use and modify.
 
 
 
-👩‍💻 Author
+## 👩‍💻 Author
 Touhid Ara Himu 
 Passionate about web development, UI/UX design, and creating interactive digital experiences.
 
