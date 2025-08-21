@@ -38,12 +38,12 @@ Visual preview of the website interface.
 ## 📂 Project Structure  
 
 Tango_Drinks_Website/  
-│── index.html           # Home page  
-│── products.html        # Product showcase & purchasing page  
-│── css/                 # Stylesheets  
-│── js/                  # JavaScript files  
-│── images/              # Drink images & assets  
-│── README.md            # Project documentation  
+│── index.html                        
+│── products.html                    
+│── css/                             
+│── js/                            
+│── images/                           
+│── README.md                         
 
 ## 📈 Future Enhancements
 
@@ -60,7 +60,7 @@ This project is licensed under the MIT License – free to use and modify.
 
 
 
-## 👩‍💻 Author
+👩‍💻 Author
 Touhid Ara Himu 
 Passionate about web development, UI/UX design, and creating interactive digital experiences.
 
