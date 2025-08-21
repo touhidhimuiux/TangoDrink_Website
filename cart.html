@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - D-Refresh</title>
+  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    /* Cart Page Custom Styles */
+    .cart-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .cart-container h2 {
+      margin-bottom: 20px;
+      color: #064232;
+    }
+
+    .cart-product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .cart-product img {
+      width: 200px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fafafa;
+      padding: 10px;
+    }
+
+    .cart-product h3 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .cart-product p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .btn.checkout-btn {
+      margin-top: 20px;
+      background: #064232;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn.checkout-btn:hover {
+      background: #046a4a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">D-Refresh</div>
+    <nav>
+      <a href="index.html">হোম</a>
+      <a href="products.html">প্রোডাক্টস</a>
+      <a href="#" class="active">Cart</a>
+    </nav>
+  </header>
+
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div class="cart-product" id="cart-product">
+      <!-- Product details will appear here -->
+    </div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script>
+    // Footer
+    document.getElementById("site-footer").innerHTML = `
+      <p>© 2025 D-Refresh  সতেজতার সাথী</p>
+      <div class="footer-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="#">Contact</a>
+      </div>
+    `;
+
+    // Get product from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('product');
+
+    // Map product images and description
+    const products = {
+      "Max Cola": { img: "images/foodpanda.jpg", desc: "Max Cola - স্বাদ আর সতেজতার অনন্য মিশ্রণ।" },
+      "Tango": { img: "images/tastytreat.jpg", desc: "Tango - সুস্বাদু ও সতেজ পানীয়।" },
+      "জিরা পানি": { img: "images/othoba.jpg", desc: "জিরা পানি - প্রাকৃতিক স্বাদের সতেজতা।" },
+      "Foodpanda": { img: "images/foodpanda.jpg", desc: "খাবার অর্ডারের জন্য সবচেয়ে জনপ্রিয় প্ল্যাটফর্ম।" },
+      "Tasty Treat": { img: "images/tastytreat.jpg", desc: "টেস্টি ট্রীট — সুস্বাদু স্ন্যাকস ও খাবারের ব্র্যান্ড।" },
+      "Othoba": { img: "images/othoba.jpg", desc: "অনলাইন শপিং এর জন্য বিশ্বস্ত প্ল্যাটফর্ম।" }
+    };
+
+    const cartDiv = document.getElementById("cart-product");
+
+    if(productName && products[productName]){
+      const p = products[productName];
+      cartDiv.innerHTML = `
+        <img src="${p.img}" alt="${productName}">
+        <h3>${productName}</h3>
+        <p>${p.desc}</p>
+        <a href="#" class="btn checkout-btn">Proceed to Checkout</a>
+      `;
+    } else {
+      cartDiv.innerHTML = `<p>No product selected.</p>`;
+    }
+  </script>
+</body>
+</html>
